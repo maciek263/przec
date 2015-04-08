@@ -5,7 +5,7 @@ chrome.contextMenus.create( {
 	onclick: count
 });
 
-
+chrome.browser_action.onClicked.addListener(function(tab){count});
 
 var equal = 0;
 
