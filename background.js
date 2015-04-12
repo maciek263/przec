@@ -5,7 +5,7 @@ chrome.contextMenus.create( {
 	onclick: count
 });
 
-chrome.browser_action.onClicked.addListener(function(tab){count});
+//chrome.browser_action.onClicked.addListener(function(tab){count});
 
 var equal = 0;
 
@@ -19,7 +19,6 @@ function count(info) {
     if(160 === select.charCodeAt(1))
             var select = select.substr(0,1)+select.substr(2,4)
     
-            
 
     var tab = [];
     var i = 0; 
@@ -29,6 +28,26 @@ function count(info) {
             tab[i] = select - equ;
             i++;
          }
+   //TODO: metoda zaokraglajaca do 9  
+    
+    var zao = 28;
+    if (zao % 10 == 0)
+        confirm(zao - 1);
+    else if (zao % 10 > 0) {
+        var z = zao % 10;
+        //confirm(z)
+        if(zao % 10 > 5) {
+            confirm('sprawdzenie czy reszta wieksza od 5 :  '+z+' '+zao);
+            for (var i = 28; i == 30; i++){
+                confirm('petla '+i);
+            }  
+        }
+        //else
+            //odejmij do 9
+        
+    }
+        
+        
     
     confirm('z '+ select  + ' to: ' + "\n"+
         '10% = ' +tab[0].toFixed(0) + "\n"+ 
@@ -41,10 +60,7 @@ function count(info) {
         '45% = ' +tab[7] + "\n"+
         '50% = ' +tab[8]
         );
-    
 
-
-    
   
     //document.write('yuio123');
 			//var myQuery = encodeURI("https://www.google.com/search?q="+w );
