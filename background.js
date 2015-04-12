@@ -30,7 +30,7 @@ function count(info) {
          }
    //TODO: metoda zaokraglajaca do 9  
     
-    var zao = 28;
+    var zao = 24;
     if (zao % 10 == 0)
         confirm(zao - 1);
     else if (zao % 10 > 0) {
@@ -38,15 +38,21 @@ function count(info) {
         //confirm(z)
         if(zao % 10 > 5) {
             confirm('sprawdzenie czy reszta wieksza od 5 :  '+z+' '+zao);
-            for (var i = 28; i == 30; i++){
+            for (var i = zao; i < 30; i++){
                 confirm('petla '+i);
             }  
+        }
+        //odejmij do 9
+        if(zao % 10 < 5) {
+            for (var i = zao; i > 19; i--){
+                confirm('petla '+i);
+            } 
         }
         //else
             //odejmij do 9
         
     }
-        
+   //console.log("log test");    
         
     
     confirm('z '+ select  + ' to: ' + "\n"+
@@ -70,7 +76,7 @@ function count(info) {
     //chrome.browserAction.setPopup({url: stro});
   //  $('.wyn').text(w3);
    // document.getElementById('wyn').textContent = w3;
-   pokazWynik(w3);
+  // pokazWynik(w3);
 }
 
 function pokazWynik(stat) {
