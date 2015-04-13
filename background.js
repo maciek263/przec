@@ -28,9 +28,9 @@ function count(info) {
             tab[i] = select - equ;
             i++;
          }
-   //TODO: metoda zaokraglajaca do 9  
-    
-    var zao = 24;
+    //TODO: metoda zaokraglajaca do 9  
+    //jak sprawdzic/obliczyc wartos do ktorej powinno byc zaokroglone
+    var zao = 21;
     if (zao % 10 == 0)
         confirm(zao - 1);
     else if (zao % 10 > 0) {
@@ -47,11 +47,12 @@ function count(info) {
             for (var i = zao; i > 19; i--){
                 confirm('petla '+i);
             } 
-        }
-        //else
-            //odejmij do 9
-        
+        }   
     }
+    //jesli wieksze od 5
+    var l = 116;
+    l=l+(10-(l%10));//reszta z dzielenia% (9-10=1)+l = 120
+    confirm('zaokroglanie do 10 '+l);
    //console.log("log test");    
         
     
