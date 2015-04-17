@@ -15,11 +15,12 @@ function count(info) {
     var select = info.selectionText;
 
     
-    
+    //usuwanie spacji
     if(160 === select.charCodeAt(1))
-            var select = select.substr(0,1)+select.substr(2,4)
+            var select = select.substr(0,1)+select.substr(2,4);
     
-
+    var select = parseInt(select);
+    //petla oblczajaca
     var tab = [];
     var i = 0; 
     
@@ -28,36 +29,45 @@ function count(info) {
             tab[i] = select - equ;
             i++;
          }
-    //TODO: metoda zaokraglajaca do 9  
-    //jak sprawdzic/obliczyc wartos do ktorej powinno byc zaokroglone
-    var zao = 21;
-    if (zao % 10 == 0)
-        confirm(zao - 1);
-    else if (zao % 10 > 0) {
-        var z = zao % 10;
-        //confirm(z)
-        if(zao % 10 > 5) {
-            confirm('sprawdzenie czy reszta wieksza od 5 :  '+z+' '+zao);
-            for (var i = zao; i < 30; i++){
-                confirm('petla '+i);
-            }  
-        }
-        //odejmij do 9
-        if(zao % 10 < 5) {
-            for (var i = zao; i > 19; i--){
-                confirm('petla '+i);
-            } 
-        }   
+    
+    var tab2 = [];
+    var i = 0;
+    var l = 0;
+    for (var x = 10; x < 55; x+=5){
+            var equ = (select * x)/100;
+            l = select - equ;
+            if (l % 10 >= 5) {
+                l+=(10-(l%10));
+                l--;
+                tab2[i] = l;  
+            }
+            else {
+                l-=l%10;
+                l--;
+                tab2[i] = l;
+            }
+        
+            i++;
+         }
+    
+
+    //zaokraglanie do 9
+   /* var l = parseInt(select);
+    
+    if (select % 10 >= 5) {
+        l+=(10-(l%10));
+        l--;
+        confirm('zaokroglanie do 10 gora '+l+'  =  '+select);  
     }
-    //jesli wieksze od 5
-    var l = 116;
-    l=l+(10-(l%10));//reszta z dzielenia% (9-10=1)+l = 120
-    confirm('zaokroglanie do 10 '+l);
-   //console.log("log test");    
+    else {
+        l-=l%10;
+        l--;
+        confirm('zaokroglanie do 10 dol '+l+'  =  '+select);
+    }*/
         
     
-    confirm('z '+ select  + ' to: ' + "\n"+
-        '10% = ' +tab[0].toFixed(0) + "\n"+ 
+   confirm('z '+ select  + ' to: ' + "\n"+
+        '10% = ' +tab[0] + "\n"+ 
 		'15% = ' +tab[1] + "\n"+
 		'20% = ' +tab[2] + "\n"+
         '25% = ' +tab[3] + "\n"+
@@ -65,8 +75,30 @@ function count(info) {
         '35% = ' +tab[5] + "\n"+
 		'40% = ' +tab[6] + "\n"+
         '45% = ' +tab[7] + "\n"+
-        '50% = ' +tab[8]
+        '50% = ' +tab[8] + "\n"+
+            ' do porownania  ' + "\n"+
+            
+        '10% = ' +tab2[0] + "\n"+ 
+		'15% = ' +tab2[1] + "\n"+
+		'20% = ' +tab2[2] + "\n"+
+        '25% = ' +tab2[3] + "\n"+
+        '30% = ' +tab2[4] + "\n"+
+        '35% = ' +tab2[5] + "\n"+
+		'40% = ' +tab2[6] + "\n"+
+        '45% = ' +tab2[7] + "\n"+
+        '50% = ' +tab2[8]
         );
+   /* confirm(
+     '10% = ' +tab2[0] + "\n"+ 
+		'15% = ' +tab2[1] + "\n"+
+		'20% = ' +tab2[2] + "\n"+
+        '25% = ' +tab2[3] + "\n"+
+        '30% = ' +tab2[4] + "\n"+
+        '35% = ' +tab2[5] + "\n"+
+		'40% = ' +tab2[6] + "\n"+
+        '45% = ' +tab2[7] + "\n"+
+        '50% = ' +tab2[8]
+    )*/
 
   
     //document.write('yuio123');
