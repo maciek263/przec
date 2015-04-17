@@ -23,49 +23,26 @@ function count(info) {
     //petla oblczajaca
     var tab = [];
     var i = 0; 
-    
-    for (var x = 10; x < 55; x+=5){
-            var equ = (select * x)/100;
-            tab[i] = select - equ;
-            i++;
-         }
-    
-    var tab2 = [];
-    var i = 0;
     var l = 0;
+    
     for (var x = 10; x < 55; x+=5){
             var equ = (select * x)/100;
             l = select - equ;
             if (l % 10 >= 5) {
                 l+=(10-(l%10));
                 l--;
-                tab2[i] = l;  
+                tab[i] = l;  
             }
             else {
                 l-=l%10;
                 l--;
-                tab2[i] = l;
+                tab[i] = l;
             }
         
             i++;
          }
-    
 
-    //zaokraglanie do 9
-   /* var l = parseInt(select);
-    
-    if (select % 10 >= 5) {
-        l+=(10-(l%10));
-        l--;
-        confirm('zaokroglanie do 10 gora '+l+'  =  '+select);  
-    }
-    else {
-        l-=l%10;
-        l--;
-        confirm('zaokroglanie do 10 dol '+l+'  =  '+select);
-    }*/
-        
-    
+          
    confirm('z '+ select  + ' to: ' + "\n"+
         '10% = ' +tab[0] + "\n"+ 
 		'15% = ' +tab[1] + "\n"+
@@ -75,30 +52,9 @@ function count(info) {
         '35% = ' +tab[5] + "\n"+
 		'40% = ' +tab[6] + "\n"+
         '45% = ' +tab[7] + "\n"+
-        '50% = ' +tab[8] + "\n"+
-            ' do porownania  ' + "\n"+
-            
-        '10% = ' +tab2[0] + "\n"+ 
-		'15% = ' +tab2[1] + "\n"+
-		'20% = ' +tab2[2] + "\n"+
-        '25% = ' +tab2[3] + "\n"+
-        '30% = ' +tab2[4] + "\n"+
-        '35% = ' +tab2[5] + "\n"+
-		'40% = ' +tab2[6] + "\n"+
-        '45% = ' +tab2[7] + "\n"+
-        '50% = ' +tab2[8]
+        '50% = ' +tab[8]
         );
-   /* confirm(
-     '10% = ' +tab2[0] + "\n"+ 
-		'15% = ' +tab2[1] + "\n"+
-		'20% = ' +tab2[2] + "\n"+
-        '25% = ' +tab2[3] + "\n"+
-        '30% = ' +tab2[4] + "\n"+
-        '35% = ' +tab2[5] + "\n"+
-		'40% = ' +tab2[6] + "\n"+
-        '45% = ' +tab2[7] + "\n"+
-        '50% = ' +tab2[8]
-    )*/
+
 
   
     //document.write('yuio123');
