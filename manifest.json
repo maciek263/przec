@@ -10,7 +10,7 @@
    },
  
     
-   "description": "PRZECENY!",
+   "description": "PRZECENY!; sugerowana jedyna sluszna przegloądarka Opera",
     "developer": {"name": "Maciek"},
     
    "icons": {
@@ -21,6 +21,6 @@
 
    "manifest_version": 2,
    "name": "Przecena",
-   "permissions": [ "contextMenus" ],
+   "permissions": [ "contextMenus"],
    "version": "0.1"
 }
