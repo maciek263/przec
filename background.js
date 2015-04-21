@@ -10,17 +10,16 @@ chrome.contextMenus.create( {
 var equal = 0;
 
 function count(info) {
-//ten plik
+
 		
     var select = info.selectionText;
 
-    
-    //usuwanie spacji
+
     if(160 === select.charCodeAt(1))
             var select = select.substr(0,1)+select.substr(2,4);
     
     var select = parseInt(select);
-    //petla oblczajaca
+
     var tab = [];
     var i = 0; 
     var l = 0;
